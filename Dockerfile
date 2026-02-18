@@ -23,4 +23,4 @@ EXPOSE 4444
 EXPOSE 5901
 EXPOSE 6080
 
-CMD ["sh", "-c", "rm -rf /tmp/.X*-lock /tmp/.X11-unix/X* && /usr/sbin/sshd -p 4444 && vncserver -localhost no -SecurityTypes None -geometry 1024x768 --I-KNOW-THIS-IS-INSECURE && websockify --web=/usr/share/novnc/ $PORT localhost:5901"]
+CMD ["sh", "-c", "rm -rf /tmp/.X*-lock /tmp/.X11-unix/X* && /usr/sbin/sshd -p 4444 && vncserver -localhost no -SecurityTypes None -geometry 1024x768 --I-KNOW-THIS-IS-INSECURE && websockify --web=/usr/share/novnc/ 6080 localhost:5901"]
